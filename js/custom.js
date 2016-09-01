@@ -665,8 +665,9 @@
 
 			$.ajax({
 				type: "POST",
-				url: "inc/form-process.php",
-				data: "name=" + name + "&email=" + email + "&message=" + message,
+				url: 'http://internetmarketingaccelerator.com/class/form-process.php',
+				crossDomain: true,
+				data: {name: name, email: email, message: message},
 				success : function(text){
 					if (text == "success"){
 						formSuccess();

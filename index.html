@@ -986,23 +986,23 @@
 		</script>
 		<script type="text/javascript" src="js/custom.js"></script>
 		<script>
-			$(document).ready(function() {
-				$('#c-form').submit(function(e){
-					e.preventDefault();
-					var	name = $('#name').val(),
-						email = $('#email').val(),
-						message = $('#message').val();
-					$.ajax({
-						type: 'post',
-						url: 'http://internetmarketingaccelerator.com/class/form-process.php',
-						crossDomain: true,
-						data: {name: name, email: email, message: message},
-						success: function(response){
-						}
-					});
+			// $(document).ready(function() {
+			// 	$('#c-form').submit(function(e){
+			// 		e.preventDefault();
+			// 		var	name = $('#name').val(),
+			// 			email = $('#email').val(),
+			// 			message = $('#message').val();
+			// 		$.ajax({
+			// 			type: 'post',
+			// 			url: 'http://internetmarketingaccelerator.com/class/form-process.php',
+			// 			crossDomain: true,
+			// 			data: {name: name, email: email, message: message},
+			// 			success: function(response){
+			// 			}
+			// 		});
 					
-				});
-			});
+			// 	});
+			// });
 		</script>
 	</body>
 
