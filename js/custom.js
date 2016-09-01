@@ -666,6 +666,7 @@
 			$.ajax({
 				type: "POST",
 				url: 'http://internetmarketingaccelerator.com/class/form-process.php',
+				dataType: "jsonp",
 				crossDomain: true,
 				data: {name: name, email: email, message: message},
 				success : function(text){
