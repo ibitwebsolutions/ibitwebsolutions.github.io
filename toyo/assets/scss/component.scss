@@ -147,7 +147,36 @@
 	}
 }
 
-#dealers-search{
+.dealers-search{
 	display: block;
 	width: 100%;
+
+	.search-box{
+		display: block;
+		border: 1px solid $blue;
+		background-color: $blue;
+		background-image: url(../img/search.png);
+		background-size: 16px;
+		background-position: 304px 10px;
+		background-repeat: no-repeat;
+		input{
+			width: 89%;
+			padding: 5px 8px;
+			border: 0;
+			font-size: 18px;
+			outline:0;
+		}
+	}
+
+	.search-result{
+		display: none;
+		margin-top: 20px;
+		padding: 70px 0;
+		background-color: $white;
+		border: 1px solid $blue;
+		text-align: center;
+		p#branch{
+			font-size: 28px;
+		}
+	}
 }
