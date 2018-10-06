@@ -1,0 +1,148 @@
+#quickmenu{
+	position: absolute;
+	display: block;
+	width: 100%;
+	margin: 0 auto;
+	bottom:0;
+	// left: 12%;
+	// width: 687px;
+	width: 100%;
+	text-align: center;
+
+	.quick-box{
+    	position: relative;
+		display: inline-block;
+		margin: 0 auto;
+		bottom: -2px;
+
+		div{
+			position: relative;
+			height: 114px;
+			width: 229px;
+			bottom: -3px;
+			padding: 0;
+			margin: 0 23px;
+			background-image: url(../img/bb.png);
+			background-repeat: repeat-x;
+			background-position: center bottom;
+
+			&:before{
+				content:"";
+				display: inline-block;
+				position: absolute;
+				left: -43px;
+				z-index: -1;
+				background: url(../img/before.png);
+				background-size: 43px 114px;
+				width: 43px;
+				height: 114px;
+			}
+
+			&:after{
+				content:"";
+				display: inline-block;
+				position: absolute;
+				right: -43px;
+				z-index: -1;
+				background: url(../img/after.png);
+				width: 43px;
+				height: 114px;
+				background-size: 43px 114px;
+
+				&:hover{
+					background-image: url(../img/cc.png);
+					img.light{
+						display: block;
+					}
+				}
+			}
+
+			img,p{
+				position: absolute;
+				display: inline-block;
+				z-index: 1;
+			}
+
+			p{
+				top: 18px;
+				left: 0;
+				width: 150px;
+				color: $white;
+				text-align: left;
+				font-size: 30px;
+				font-weight: bold;
+				font-style: italic;
+				text-transform: uppercase;
+			}
+
+			img{
+				float: right;
+				right: 0;
+				top: 10px;
+			}
+
+			img.light{
+				display: none;
+				z-index: 0;
+			    right: -43px !important;
+			    width: 236px !important;
+			    height: 114px !important;
+			    top: 0!important;
+			}
+
+			&:hover{
+				background-image: url(../img/cc.png);
+				img.light{
+					display: block;
+				}			
+
+				&:before{
+					// img.light{
+					// 	display: block;
+					// }
+					background-image: url(../img/before2.png);
+				}
+			}
+
+			&.location{
+				img{
+					top: 1px;
+				    right: 0px;
+				    width: 70px;
+				}
+			}
+
+			&.tires{
+				img{
+					top: 4px;
+		    		right: -19px;
+				}
+			}
+
+			&.cars{
+				img{
+					width: 220px;
+				    right: -136px;
+				    top: 0;
+				}
+			}
+		}
+	}
+}
+
+#home-news{
+	margin-top: 30px;
+	ul{
+		display: inline-block;
+		li{
+			opacity: 0.50;
+			&:not(:last-child){
+				margin-bottom: 5px;
+			}
+
+			&:hover{
+				opacity: 1;
+			}
+		}
+	}
+}
