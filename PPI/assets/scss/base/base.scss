@@ -1,0 +1,394 @@
+body {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    font-family: "PT Sans W01 Regular";
+    font-size: 12px;
+    header {
+        .topHead {
+            height: 120px;
+            margin-bottom: 8px;
+            background: rgba(153, 51, 100, 1);
+            background: -moz-linear-gradient(left, rgba(153, 51, 100, 1) 50%, rgba(153, 51, 100, 1) 51%, rgba(151, 51, 101, 1) 52%, rgba(69, 63, 120, 1) 87%);
+            background: -webkit-gradient(left top, right top, color-stop(50%, rgba(153, 51, 100, 1)), color-stop(51%, rgba(153, 51, 100, 1)), color-stop(52%, rgba(151, 51, 101, 1)), color-stop(87%, rgba(69, 63, 120, 1)));
+            background: -webkit-linear-gradient(left, rgba(153, 51, 100, 1) 50%, rgba(153, 51, 100, 1) 51%, rgba(151, 51, 101, 1) 52%, rgba(69, 63, 120, 1) 87%);
+            background: -o-linear-gradient(left, rgba(153, 51, 100, 1) 50%, rgba(153, 51, 100, 1) 51%, rgba(151, 51, 101, 1) 52%, rgba(69, 63, 120, 1) 87%);
+            background: -ms-linear-gradient(left, rgba(153, 51, 100, 1) 50%, rgba(153, 51, 100, 1) 51%, rgba(151, 51, 101, 1) 52%, rgba(69, 63, 120, 1) 87%);
+            background: linear-gradient(to right, rgba(153, 51, 100, 1) 50%, rgba(153, 51, 100, 1) 51%, rgba(151, 51, 101, 1) 52%, rgba(69, 63, 120, 1) 87%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#993364', endColorstr='#453f78', GradientType=1);
+
+
+
+            .row {
+                position: relative;
+                display: inline-block;
+                margin: 0 auto;
+                padding-top: 17px;
+                width: 100%;
+                height: 120px;
+
+                @media only screen and (max-width: $visible-md) {
+                    height: auto;
+                    p {
+                        margin: 3.59vw 0;
+                        width: 12.12vw;
+                        img {
+                            width: 100%;
+                            height: auto!important;
+                        }
+                    }
+                }
+
+                @media only screen and (max-width: $mobile) {
+                    p {
+                        margin: 3.59vw 0!important;
+                    }
+                }
+            }
+        }
+
+        .breadcrumbs{
+            .row {
+                position: relative;
+                display: inline-block;
+                margin: 0 auto;
+            }
+        }
+    }
+
+    #callActionblocks {
+        display: block;
+        margin-top: 49px;
+
+        @media only screen and (max-width: $visible-md) {
+            margin-top: 29px;
+        }
+
+        @media only screen and (max-width: $mobile) {
+            margin: 0;
+            .container {
+                padding: 0;
+                ul {
+                    li {
+                        padding: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    #welcome {
+        display: block;
+        margin-top: 60px;
+    }
+
+    #press {
+        margin-top: 60px;
+        @media only screen and (max-width: $medium) {
+            margin-top: 20px;
+        }
+    }
+
+    #donations {
+        position: relative;
+        .content {
+            height: 190px;
+            text-align: center;
+            background: url('../images/body/donations/PPI-donations-strip-background-SWR.jpg');
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: top center;
+            background-size: 1366px 190px;
+
+            @media only screen and (max-width: $mobile) {
+                height: auto;
+                background-position: bottom center;
+                background-size: auto 58vw;
+            }
+
+            .container {
+                .row {
+                    display: table-cell;
+                    padding-top: 5%;
+                    .bigTxt {
+                        // position: relative;
+                        display: inline-block;
+                        font-size: 52px;
+                        font-family: 'Palatino Linotype W01';
+                        color: #fff;
+                        border-right: 2px solid #f7f6f5;
+                        padding: 0px 15px;
+                        margin-left: 17px;
+                    }
+
+                    .right {
+                        display: inline-block;
+                        padding: 9px 15px;
+                        margin-left: -17px;
+                        p {
+                            color: #fff;
+                            font-size: 20px;
+                            font-family: 'PT Sans W01 Light';
+                        }
+                    }
+
+                    .btnBlue {
+                        display: inline-block;
+                        text-align: left;
+                        height: 72px;
+                        padding: 18px 15px;
+                        button {
+                            display: inline-block;
+                            font-size: 16px;
+                        }
+                    }
+
+                    @media only screen and (max-width: $medium) {
+                        .bigTxt {
+                            font-size: 45px;
+                            margin-left: 0;
+                        }
+                        .right {
+                            margin-left: 0;
+                            p {
+                                font-size: 18px;
+                            }
+                        }
+                    }
+
+
+                    @media only screen and (max-width: $visible-md) {
+                        padding-top: 15px;
+                        .bigTxt {
+                            font-size: 300%;
+                            border: none;
+                        }
+                        .right {
+                            padding: 0px 15px;
+                            text-align: center;
+                            p {
+                                display: inline-block;
+                                margin: 0 0 5px;
+                                width: 80%;
+                                font-size: 150%;
+                            }
+                        }
+
+                        .btnBlue {
+                            display: inline-block;
+                            text-align: center;
+                            height: 72px;
+                            padding: 0 15px;
+                            button {
+                                display: inline-block;
+                                font-size: 108%;
+                            }
+                        }
+                    }
+
+                    @media only screen and (max-width: $mobile) {
+                        .bigTxt {
+                            font-size: 9vw;
+                        }
+
+                        .right {
+                            padding: 0;
+                            p {
+                                font-size: 4vw;
+                            }
+                        }
+
+                        .btnBlue {
+                            display: inline-block;
+                            text-align: center;
+                            height: 72px;
+                            padding: 0 15px;
+                            button {
+                                display: inline-block;
+                                font-size: 4vw;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    footer {
+        height: auto;
+        background: rgba(69, 63, 120, 1);
+        background: -moz-linear-gradient(left, rgba(69, 63, 120, 1) 47%, rgba(102, 58, 113, 1) 68%, rgba(152, 51, 102, 1) 100%);
+        background: -webkit-gradient(left top, right top, color-stop(47%, rgba(69, 63, 120, 1)), color-stop(68%, rgba(102, 58, 113, 1)), color-stop(100%, rgba(152, 51, 102, 1)));
+        background: -webkit-linear-gradient(left, rgba(69, 63, 120, 1) 47%, rgba(102, 58, 113, 1) 68%, rgba(152, 51, 102, 1) 100%);
+        background: -o-linear-gradient(left, rgba(69, 63, 120, 1) 47%, rgba(102, 58, 113, 1) 68%, rgba(152, 51, 102, 1) 100%);
+        background: -ms-linear-gradient(left, rgba(69, 63, 120, 1) 47%, rgba(102, 58, 113, 1) 68%, rgba(152, 51, 102, 1) 100%);
+        background: linear-gradient(to right, rgba(69, 63, 120, 1) 47%, rgba(102, 58, 113, 1) 68%, rgba(152, 51, 102, 1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#453f78', endColorstr='#983366', GradientType=1);
+
+        .rowA {
+            height: auto;
+            .boxA {
+                padding: 36px 0 36px 0;
+                .aBox {
+                    text-align: left;
+                    ul {
+                        display: block;
+                        padding-left: 0;
+                        margin-bottom: 30px;
+                        list-style: none;
+
+                        li {
+                            display: inline-block;
+                            color: #fff;
+                            text-transform: uppercase;
+                            font-size: 14px;
+
+                            a {
+                                color: #fff;
+                            }
+
+                            &:not(:last-child) {
+                                margin-right: 10px;
+                            }
+
+                            &:not(:last-child):after {
+                                content: "|";
+                                position: relative;
+                                left: 5px;
+                                clear: both;
+                                float: right;
+                            }
+                        }
+                    }
+
+                    p {
+                        color: #fff;
+                        font-size: 13px;
+                    }
+                }
+                .bBox {
+                    display: block;
+                    text-align: center;
+                    p {
+                        display: inline-block;
+                        img {
+                            width: 150px;
+                            height: 84px;
+                        }
+                    }
+                }
+
+                .cBox {
+                    color: #fff;
+                    text-align: right;
+                    p {
+                        font-size: 12px;
+                    }
+                }
+
+                @media only screen and (max-width: $visible-xs) {
+                    .aBox {
+                        text-align: center;
+                    }
+
+                    .bBox {
+                        text-align: center;
+                        p {}
+                    }
+
+                    .cBox {
+                        text-align: center;
+                    }
+                }
+
+
+                @media only screen and (max-width: $mobile) {
+                    .aBox {
+                        text-align: center;
+                        margin-bottom: 20px;
+                        ul {
+                            margin-bottom: 20px;
+                            li {
+                                font-size: 3vw;
+                            }
+                        }
+
+                        p {
+                            color: #fff;
+                            font-size: 2.5vw;
+                        }
+                    }
+
+                    .bBox {
+                        display: block;
+                        text-align: center;
+                        p {
+                            display: inline-block;
+                            img {
+                                width: 30vw;
+                                height: auto;
+                            }
+                        }
+                    }
+
+                    .cBox {
+                        color: #fff;
+                        text-align: center;
+                        p {
+                            font-size: 3vw;
+                            margin-bottom: 3px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .rowB {
+            .boxB {
+                text-align: center;
+                background: rgba(0, 0, 0, 0.1);
+                padding: 5px 0 5px;
+                p {
+                    display: inline-block;
+                    text-transform: Uppercase;
+                    font-family: 'PT Sans W01 Light';
+                    color: #fff;
+                    font-size: 10px;
+                    margin-bottom: 0;
+
+                    &:after {
+                        content: "";
+                        display: table-cell;
+                        position: relative;
+                        left: 5px;
+                        clear: both;
+                        background: url('../images/footer/PPI-rade-logo-SWR.png');
+                        backgroun-repeat: no-repeat;
+                        background-size: 15px 15px;
+                        width: 15px;
+                        height: 15px;
+                        float: right;
+                    }
+
+                    @media only screen and (max-width: $mobile) {
+                        font-size: 2.5vw;
+
+                        &:after {
+                            content: "";
+                            display: table-cell;
+                            position: relative;
+                            left: 5px;
+                            clear: both;
+                            background: url('../images/footer/PPI-rade-logo-SWR.png');
+                            backgroun-repeat: no-repeat;
+                            background-size: 3vw 3vw;
+                            width: 3vw;
+                            height: 3vw;
+                            float: right;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
