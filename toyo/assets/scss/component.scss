@@ -1,182 +1,251 @@
-#quickmenu{
-	position: absolute;
+#quickmenu {
+    position: absolute;
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    bottom: 0;
+    // left: 12%;
+    // width: 687px;
+    width: 100%;
+    text-align: center;
+
+    .quick-box {
+        position: relative;
+        display: inline-block;
+        margin: 0 auto;
+        bottom: -2px;
+
+        div {
+            position: relative;
+            height: 114px;
+            width: 229px;
+            bottom: -3px;
+            padding: 0;
+            margin: 0 23px;
+            background-image: url(../img/bb.png);
+            background-repeat: repeat-x;
+            background-position: center bottom;
+
+            &:before {
+                content: "";
+                display: inline-block;
+                position: absolute;
+                left: -43px;
+                z-index: -1;
+                background: url(../img/before.png);
+                background-size: 43px 114px;
+                width: 43px;
+                height: 114px;
+            }
+
+            &:after {
+                content: "";
+                display: inline-block;
+                position: absolute;
+                right: -43px;
+                z-index: -1;
+                background: url(../img/after.png);
+                width: 43px;
+                height: 114px;
+                background-size: 43px 114px;
+
+                &:hover {
+                    background-image: url(../img/cc.png);
+
+                    img.light {
+                        display: block;
+                    }
+                }
+            }
+
+            img,
+            p {
+                position: absolute;
+                display: inline-block;
+                z-index: 1;
+            }
+
+            p {
+                top: 18px;
+                left: 0;
+                width: 150px;
+                color: $white;
+                text-align: left;
+                font-size: 30px;
+                font-weight: bold;
+                font-style: italic;
+                text-transform: uppercase;
+            }
+
+            img {
+                float: right;
+                right: 0;
+                top: 10px;
+            }
+
+            img.light {
+                display: none;
+                z-index: 0;
+                right: -43px !important;
+                width: 236px !important;
+                height: 114px !important;
+                top: 0 !important;
+            }
+
+            &:hover {
+                background-image: url(../img/cc.png);
+
+                img.light {
+                    display: block;
+                }
+
+                &:before {
+                    // img.light{
+                    // 	display: block;
+                    // }
+                    background-image: url(../img/before2.png);
+                }
+            }
+
+            &.location {
+                img {
+                    top: 1px;
+                    right: 0px;
+                    width: 70px;
+                }
+            }
+
+            &.tires {
+                img {
+                    top: 4px;
+                    right: -19px;
+                }
+            }
+
+            &.cars {
+                img {
+                    width: 220px;
+                    right: -136px;
+                    top: 0;
+                }
+            }
+        }
+    }
+}
+
+#home-news {
+    margin-top: 30px;
+
+    ul {
+        display: inline-block;
+
+        li {
+            opacity: 0.50;
+
+            &:not(:last-child) {
+                margin-bottom: 5px;
+            }
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.dealers-search {
+    display: block;
+    width: 100%;
+
+    .search-box {
+        display: block;
+        border: 1px solid $blue;
+        background-color: $blue;
+        background-image: url(../img/search.png);
+        background-size: 16px;
+        background-position: 304px 10px;
+        background-repeat: no-repeat;
+
+        input {
+            width: 89%;
+            padding: 5px 8px;
+            border: 0;
+            font-size: 18px;
+            outline: 0;
+        }
+    }
+
+    .search-result {
+        display: none;
+        margin-top: 20px;
+        padding: 70px 0;
+        background-color: $white;
+        border: 1px solid $blue;
+        text-align: center;
+
+        p#branch {
+            font-size: 28px;
+        }
+    }
+}
+
+ul.size-select{
 	display: block;
-	width: 100%;
-	margin: 0 auto;
-	bottom:0;
-	// left: 12%;
-	// width: 687px;
-	width: 100%;
-	text-align: center;
-
-	.quick-box{
-    	position: relative;
+	padding: 0;
+	margin-bottom: 20px;
+	li{
 		display: inline-block;
-		margin: 0 auto;
-		bottom: -2px;
+		margin-right: 20px;
+		a{
+			color: $black;
+			font-size: 20px;
+			font-weight: bold;
 
-		div{
-			position: relative;
-			height: 114px;
-			width: 229px;
-			bottom: -3px;
-			padding: 0;
-			margin: 0 23px;
-			background-image: url(../img/bb.png);
-			background-repeat: repeat-x;
-			background-position: center bottom;
-
-			&:before{
-				content:"";
-				display: inline-block;
-				position: absolute;
-				left: -43px;
-				z-index: -1;
-				background: url(../img/before.png);
-				background-size: 43px 114px;
-				width: 43px;
-				height: 114px;
-			}
-
-			&:after{
-				content:"";
-				display: inline-block;
-				position: absolute;
-				right: -43px;
-				z-index: -1;
-				background: url(../img/after.png);
-				width: 43px;
-				height: 114px;
-				background-size: 43px 114px;
-
-				&:hover{
-					background-image: url(../img/cc.png);
-					img.light{
-						display: block;
-					}
-				}
-			}
-
-			img,p{
-				position: absolute;
-				display: inline-block;
-				z-index: 1;
-			}
-
-			p{
-				top: 18px;
-				left: 0;
-				width: 150px;
-				color: $white;
-				text-align: left;
-				font-size: 30px;
-				font-weight: bold;
-				font-style: italic;
-				text-transform: uppercase;
-			}
-
-			img{
-				float: right;
-				right: 0;
-				top: 10px;
-			}
-
-			img.light{
-				display: none;
-				z-index: 0;
-			    right: -43px !important;
-			    width: 236px !important;
-			    height: 114px !important;
-			    top: 0!important;
-			}
-
-			&:hover{
-				background-image: url(../img/cc.png);
-				img.light{
-					display: block;
-				}			
-
-				&:before{
-					// img.light{
-					// 	display: block;
-					// }
-					background-image: url(../img/before2.png);
-				}
-			}
-
-			&.location{
-				img{
-					top: 1px;
-				    right: 0px;
-				    width: 70px;
-				}
-			}
-
-			&.tires{
-				img{
-					top: 4px;
-		    		right: -19px;
-				}
-			}
-
-			&.cars{
-				img{
-					width: 220px;
-				    right: -136px;
-				    top: 0;
-				}
+			&.active{
+				color: $blue;
 			}
 		}
 	}
 }
 
-#home-news{
-	margin-top: 30px;
-	ul{
-		display: inline-block;
-		li{
-			opacity: 0.50;
-			&:not(:last-child){
-				margin-bottom: 5px;
-			}
+.size-options {
+    ul {
+    	overflow-x: auto;
+    	overflow-y: hidden;
+        width: 420px;
+        height: 332px;
+        padding: 0;
+        list-style: none;
+        /* room for 3 columns */
+    }
 
-			&:hover{
-				opacity: 1;
-			}
-		}
+    ul li {
+        float: left;
+        width: 90px;
+        margin-bottom: 20px;
+        margin-left: 0px;
+        font-size: 18px;
+        /* accommodate the widest item */
+    }
+
+    /* stop the floating after the list */
+    br {
+        clear: left;
+    }
+
+    /* anchor styling */
+	ol li a
+	{
+	  display: block;
+	  width: 7em;
+	  // text-decoration: none;
 	}
-}
-
-.dealers-search{
-	display: block;
-	width: 100%;
-
-	.search-box{
-		display: block;
-		border: 1px solid $blue;
-		background-color: $blue;
-		background-image: url(../img/search.png);
-		background-size: 16px;
-		background-position: 304px 10px;
-		background-repeat: no-repeat;
-		input{
-			width: 89%;
-			padding: 5px 8px;
-			border: 0;
-			font-size: 18px;
-			outline:0;
-		}
+	ul li:hover
+	{
+	  background-color: #fff;
 	}
-
-	.search-result{
-		display: none;
-		margin-top: 20px;
-		padding: 70px 0;
-		background-color: $white;
-		border: 1px solid $blue;
-		text-align: center;
-		p#branch{
-			font-size: 28px;
-		}
+	ul li a:hover
+	{
+	  color: $black; /* white */
 	}
 }
