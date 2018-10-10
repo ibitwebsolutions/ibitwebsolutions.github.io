@@ -5622,7 +5622,8 @@ section .page {
         right: 0px;
         width: 70px; }
       #quickmenu .quick-box div.tires img {
-        top: 4px;
+        width: 120px;
+        top: 12px;
         right: -19px; }
       #quickmenu .quick-box div.cars img {
         width: 220px;
@@ -5630,6 +5631,10 @@ section .page {
         top: 0; }
 
 #home-news {
+  display: inline-block;
+  position: absolute;
+  right: 50px;
+  bottom: 150px;
   margin-top: 30px; }
   #home-news ul {
     display: inline-block; }

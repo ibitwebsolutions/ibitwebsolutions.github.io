@@ -117,7 +117,8 @@
 
             &.tires {
                 img {
-                    top: 4px;
+                	width: 120px;
+                    top: 12px;
                     right: -19px;
                 }
             }
@@ -134,6 +135,11 @@
 }
 
 #home-news {
+	//Pre Julius itago mo muna to sa CMS pwde to ito i show or i hide pero by default nka hide to
+	display: inline-block;
+	position: absolute;
+	right: 50px;
+	bottom: 150px;
     margin-top: 30px;
 
     ul {
