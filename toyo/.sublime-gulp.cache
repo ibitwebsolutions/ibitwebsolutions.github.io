@@ -1,0 +1,1 @@
+{"C:\\Users\\MHon Romero\\Documents\\PROJECTS\\site\\site\\gulpfile.js":{"sha1":"19f05ea69f9437707518fb3cae0eabe86a8a3226","tasks":{"serve":{"name":"serve","dependencies":"sass js"},"sass":{"name":"sass","dependencies":""},"js":{"name":"js","dependencies":""},"default":{"name":"default","dependencies":"serve"}}}}

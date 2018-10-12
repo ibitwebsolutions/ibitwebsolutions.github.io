@@ -1,0 +1,18 @@
+Remember that you can report errors and get help in https://github.com/NicoSantangelo/sublime-gulp
+
+10-10-2018 00:48:
+C:\Users\MHon Romero\Documents\PROJECTS\site\site\.sublime-gulp-tmp.js:30
+					"assets/scss/layout.scss"
+					^^^^^^^^^^^^^^^^^^^^^^^^^
+
+SyntaxError: Unexpected string
+    at createScript (vm.js:80:10)
+    at Object.runInThisContext (vm.js:139:10)
+    at Module._compile (module.js:617:28)
+    at Object.Module._extensions..js (module.js:664:10)
+    at Module.load (module.js:566:32)
+    at tryModuleLoad (module.js:506:12)
+    at Function.Module._load (module.js:498:3)
+    at Module.require (module.js:597:17)
+    at require (internal/module.js:11:18)
+    at requireGulp (C:\Users\MHon Romero\AppData\Roaming\Sublime Text 3\Packages\Gulp\write_tasks_to_cache.js:28:16)
