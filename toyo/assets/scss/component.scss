@@ -180,45 +180,62 @@ ul.size-select{
 	}
 }
 
-.size-options {
+.size-box{
 	overflow-x: auto;
 	overflow-y: hidden;
+    max-width: 555px;
     width: 100%;
     height: 332px;
-    ul {
-    	display: inline-block;
-        padding: 0;
-        margin-top: 20px;
-        list-style: none;
-        /* room for 3 columns */
+    .size-options {
+        width: auto;
+        ul {
+        	display: inline-block;
+            float: left;
+            padding: 0;
+            margin-top: 20px;
+            list-style: none;
+            /* room for 3 columns */
+        }
+
+        ul li {
+        	display: block;
+            width: 120px;
+            margin-bottom: 20px;
+            margin-left: 0px;
+            text-align: center;
+            font-size: 18px;
+            /* accommodate the widest item */
+        }
+
+        /* stop the floating after the list */
+        br {
+            clear: left;
+        }
+
+        /* anchor styling */
+    	ol li a
+    	{
+    	  display: block;
+    	  width: 7em;
+    	  // text-decoration: none;
+    	}
+    	ul li a:hover
+    	{
+    	  color: $black;
+    	  font-weight: bold;
+    	  text-decoration: underline!important;
+    	}
+    }
+}
+
+.contact{
+    padding: 50px 0;
+    .title{
+        font-size: 30px!important;
     }
 
-    ul li {
-    	display: block;
-        width: 120px;
-        margin-bottom: 20px;
-        margin-left: 0px;
-        text-align: center;
-        font-size: 18px;
-        /* accommodate the widest item */
+    p{
+        font-weight: bold;
+        font-size: 20px!important;
     }
-
-    /* stop the floating after the list */
-    br {
-        clear: left;
-    }
-
-    /* anchor styling */
-	ol li a
-	{
-	  display: block;
-	  width: 7em;
-	  // text-decoration: none;
-	}
-	ul li a:hover
-	{
-	  color: $black;
-	  font-weight: bold;
-	  text-decoration: underline!important;
-	}
 }
