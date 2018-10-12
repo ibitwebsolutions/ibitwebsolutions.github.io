@@ -50,31 +50,8 @@
 						</div>
 					</div>
 				</div>
-				<div class="page-body">
-					<div class="container">
-						<div class="row">
-							<div class="col-sm-4">
-								<div class="col-xs-12">
-									<div class="dealers-search">
-										<div class="search-box">
-											  <div class="autocomplete">
-											    <input type="text" id="dealers" name="dealers" placeholder="Search Dealers" data-add="" data-coor="" data-phone="">
-											  </div>
-										</div>
-
-										<div class="search-result">
-											<p id="branch"></p>
-											<p id="address"></p>
-											<p id="phone"></p>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-sm-8">
-								<div id="map"></div>
-							</div>
-						</div>
-					</div>
+				<div class="page-body p0">
+					<div id="map"></div>
 				</div>
 			</div>
 		</article>
@@ -86,92 +63,105 @@
 	<script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="assets/js/index.js"></script>
 	<script type="text/javascript" src="assets/js/data.js"></script>
-	<script>
-			// field search auto complete
-			autocomplete(document.getElementById("dealers"), dealers);
 
-			var directionsDisplay, directionsService;
-			var map;
-			var firstPoint, lastPoint, firstPointInput;
-			var myLat, myLong;
-			var geoCoder;
-			var currLoc = navigator.geolocation;
-			currLoc.getCurrentPosition(initialize, failure);
+	<script>
+			
+			var directionsDisplay, directionsService, map, firstPoint, lastPoint, myLat, myLong;
+			navigator.geolocation.getCurrentPosition(initialize, failure);
 					
 			function initialize(position) {
-				
-				// Service And Render in Get Direction
-				directionsService = new google.maps.DirectionsService();
-				directionsDisplay = new google.maps.DirectionsRenderer();
-				geoCoder = new google.maps.Geocoder();
-				
-				// Get Current Position
-				myLat = position.coords.latitude;
-				myLong = position.coords.longitude;
-				
-				// First Point
-				firstPoint = new google.maps.LatLng(myLat, myLong);
-				
-				// Set Map And Marker
 				var mapOptions = {
 					zoom: 15,
 					center: firstPoint
 				}
 				map = new google.maps.Map(document.getElementById('map'), mapOptions);
-				var markerOptions = {
-					position: firstPoint,
-					map: map
-				};
-				var marker = new google.maps.Marker(markerOptions);
-				directionsDisplay.setMap(map);
+				directionsService = new google.maps.DirectionsService();
+				directionsDisplay = new google.maps.DirectionsRenderer();
+				geoCoder = new google.maps.Geocoder();
 
-			}
+				if (navigator.geolocation) {
+					navigator.geolocation.getCurrentPosition(function(position) {
+						
+						myLat = position.coords.latitude;
+						myLong = position.coords.longitude;
+						firstPoint = new google.maps.LatLng(myLat, myLong);
+						var markerOptions = {
+							map: map
+						};
+						var marker = new google.maps.Marker(markerOptions);
+						directionsDisplay.setMap(map);
+						var locations = [
+							{
+								"name"        : "Toyo Tires Driven",
+								"lat"         : "14.6191054",
+								"lng"         : "121.0060365",
+								"address"     : "1113 Banawe St, Quezon City, Metro Manila"
+								// 10.3 KM
+							},{
+								"name"        : "Toyo Tires Philippines",
+								"lat"         : "14.5947099",
+								"lng"         : "121.0558002",
+								"address"     : "347 Ortigas Ave, Greenhills East, Mandaluyong, 1554, Mandaluyong, Metro Manila"
+								// 7.8 KM
+							},{
+								"name"        : "Tire Wizard Depot, Inc.",
+								"lat"         : "14.589760",
+								"lng"         : "121.096367",
+								"address"     : "1223 Ortigas Avenue Extension, Rosario, Pasig"
+								// 10.3 KM
+							}	
+						];
+						// My location 14.544076799999997 121.01713919999999
+				
+						calculateRoute(locations);
 
-			function failure(){
-
-			}
-					
-			function calculateRoute(first_location_input, lat, long) {
-				var lastPoint = new google.maps.LatLng(lat, long);
-				if (first_location_input) {
-					geoCoder.geocode( {
-						'address' : first_location_input
-					}, function (results, status) {
-							var first_location_latitude = results[0].geometry.location.lat(),
-								first_location_longitude = results[0].geometry.location.lng(),
-								firstPoint_input = new google.maps.LatLng(first_location_latitude, first_location_longitude);
-								var request = {
-									origin: firstPoint_input,
-									destination: lastPoint,
-									travelMode: 'DRIVING'
-								}
-								directionsService.route(request, function(result, status) {
-									directionsDisplay.setDirections(result);
-								});
+					}, function() {
+						handleLocationError(true, infoWindow, map.getCenter());
 					});
 				} else {
+				handleLocationError(false, infoWindow, map.getCenter());
+				}
+			}
+			
+			function failure() {}
+			var arr = [];	
+			function calculateRoute(locations) {
+				for(x = 0; x < locations.length; x++) {
+					var lastPoint = new google.maps.LatLng(locations[x].lat, locations[x].lng);
 					var request = {
 						origin: firstPoint,
 						destination: lastPoint,
 						travelMode: 'DRIVING'
 					}
+					// var lastPoint = new google.maps.LatLng(lat, long);
 					directionsService.route(request, function(result, status) {
-						directionsDisplay.setDirections(result);
+						var newData = {
+							"distance" : parseFloat(result.routes[0].legs[0].distance.text),
+							"result" : result
+						}
+						arr.push(newData);
 					});
 				}
+				const closest = arr.reduce(
+				(acc, loc) =>
+					acc.distance < loc.distance
+					? acc
+					: loc
+				)
+				directionsService.route(request, function(result, status) {
+					directionsDisplay.setDirections(closest.result);
+				});
 			}
 
-			function exec(){
-				document.getElementById('branch').innerHTML = document.getElementById('dealers').value;
-				document.getElementById('address').innerHTML = document.getElementById('dealers').getAttribute('data-add');
-				document.getElementById('phone').innerHTML = document.getElementById('dealers').getAttribute('data-phone');
-				$('.search-result').css({"display":"block"});
-				var getvalue_firstPoint = firstPoint,
-					getvalue_lastPoint = document.getElementById('dealers').getAttribute('data-coor'),
-					coordinates = getvalue_lastPoint.split(',');
-				calculateRoute(getvalue_firstPoint, coordinates[0], coordinates[1]);
-			}
-	</script>
+			function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+				infoWindow.setPosition(pos);
+				infoWindow.setContent(browserHasGeolocation ?
+									'Error: The Geolocation service failed.' :
+									'Error: Your browser doesn\'t support geolocation.');
+				infoWindow.open(map);
+      		}
+			
+		</script>
 	<script src="https://maps.googleapis.com/maps/api/js?sensor=false&callback=initialize" async defer></script>
 </body>
 </html>
