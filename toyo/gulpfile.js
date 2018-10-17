@@ -7,9 +7,10 @@ var browserSync 	= require('browser-sync').create();
 var sass        	= require('gulp-sass');
 var plumber 		= require('gulp-plumber');
 var uglify 			= require('gulp-uglify');
+var babel 			= require("gulp-babel");
 
 // Static Server + watching scss/html files
-gulp.task('serve', ['sass','js'], () => {
+gulp.task('serve', ['sass','js','babel'], () => {
 
 	browserSync.init({
 		server: "."
@@ -26,6 +27,7 @@ gulp.task('serve', ['sass','js'], () => {
 gulp.task('sass', () => {
 	return gulp.src([
 					"assets/plugins/bootstrap/css/bootstrap.min.css",
+					"assets/plugins/slick/slick.scss",
 					"assets/scss/base.scss",
 					"assets/scss/layout.scss",
 					"assets/scss/component.scss",
@@ -44,7 +46,11 @@ gulp.task('sass', () => {
 });
 
 gulp.task('js', () => {
-	return gulp.src('assets/gulp-js/*.js')
+	return gulp.src([
+					'assets/plugins/bootstrap/js/bootstrap.min.js',
+					'assets/plugins/slick/slick.min.js',
+					'assets/gulp-js/*.js'
+					])
 	.pipe(concat("index.js"))
 	.pipe(plumber({
 			handleError: function(err) {
@@ -55,6 +61,13 @@ gulp.task('js', () => {
 	.pipe(uglify())
 	.pipe(gulp.dest('assets/js/'))
 	.pipe(browserSync.stream());
+});
+
+gulp.task('babel', () => {
+  return gulp.src("assets/babel/*.js")
+    .pipe(babel())
+    .pipe(concat("babel.js"))
+    .pipe(gulp.dest('assets/gulp-js/'));
 });
 
 gulp.task('default', ['serve']);

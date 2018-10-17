@@ -144,3 +144,12 @@ section{
 	width: 100%;
 	height: 460px;
 }
+.btn-custom.btn-skip{
+	display: none;
+}
+.btn-custom{
+	padding: 8px 25px;
+	background-color: $blue;
+	color: $white;
+	font-size: 18px;
+}
