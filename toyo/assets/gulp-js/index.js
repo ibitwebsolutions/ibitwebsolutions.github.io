@@ -66,7 +66,20 @@ $(document).ready(function(){
 	  arrows: false,
 	  asNavFor: '.car-select',
 	  dots: true,
-	  centerMode: true,
+	  centerMode: false,
 	  focusOnSelect: true
+	});
+
+	$('.news-slider').slick({
+		slidesToShow: 3,
+		slidesToScroll: 1,
+		lazyLoad: 'ondemand',
+		prevArrow: $(".prev"),
+		nextArrow: $(".next"),
+		fade: false,
+		dots: false,
+		centerMode: false,
+		focusOnSelect: true,
+		adaptiveHeight: true
 	});
 });

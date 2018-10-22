@@ -15,6 +15,10 @@
         margin: 0 auto;
         bottom: -2px;
 
+        a{
+            color: $white;
+        }
+
         div {
             position: relative;
             height: 114px;
@@ -164,7 +168,7 @@
 ul.size-select{
 	display: block;
 	padding: 0;
-	margin-bottom: 20px;
+	margin-bottom: 0px;
 	li{
 		display: inline-block;
 		margin-right: 20px;
@@ -190,6 +194,7 @@ ul.size-select{
     .size-options {
         display: flex;
         width: auto;
+        margin-top: 20px;
         ul {
         	display: inline-block;
             float: left;
@@ -242,35 +247,19 @@ ul.size-select{
 }
 
 .car-options{
-    .car-box{
-        position: relative;
-        .car-select{
-            .slick-list{
+    .car-select{
+        .slick-list{
+            height: 300px;
+            .slick-track{
                 height: 300px;
-                .slick-track{
-                    height: 300px;
-                    div.slick-slide{
-                        text-align: center;
-                        outline: none;
-                        img{
-                            display: inline-block;
-                        }
-                    } 
-                }
+                div.slick-slide{
+                    text-align: center;
+                    outline: none;
+                    img{
+                        display: inline-block;
+                    }
+                } 
             }
-        }
-        .left-nav,
-        .right-nav{
-            position: absolute;
-            top: 50%;
-        }
-
-        .left-nav{
-            left:0;
-        }
-
-        .right-nav{
-            right:0;
         }
     }
     .car-thumb{
@@ -305,3 +294,36 @@ ul.size-select{
     }
 }
 
+.cars-form{
+    margin-top: 40px;
+    .input-group{
+        width: 100%;
+        margin-bottom: 10px;
+        label,
+        select{
+            display: block;
+            font-size: 20px;
+        }
+
+        select{
+            padding: 5px 15px;
+            width: 100%;
+        }
+    }
+}
+
+.news-title{
+    .title{
+        margin: 0;
+        font-size: 24px;
+        font-weight: normal;
+    }
+
+    span.date{
+        font-size: 18px;
+    }
+}
+
+.news-body{
+    margin-top: 40px;
+}

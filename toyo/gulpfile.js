@@ -18,8 +18,9 @@ gulp.task('serve', ['sass','js','babel'], () => {
 
 	gulp.watch([
 			   'assets/scss/*.scss',
+			   'assets/babel/*.js',
 			   'assets/gulp-js/*.js'
-			   ], ['sass','js']);
+			   ], ['sass','js','babel']);
 	gulp.watch("*.html").on('change', browserSync.reload);
 });
 
@@ -67,7 +68,8 @@ gulp.task('babel', () => {
   return gulp.src("assets/babel/*.js")
     .pipe(babel())
     .pipe(concat("babel.js"))
-    .pipe(gulp.dest('assets/gulp-js/'));
+    .pipe(gulp.dest('assets/gulp-js/'))
+    .pipe(browserSync.stream());
 });
 
 gulp.task('default', ['serve']);

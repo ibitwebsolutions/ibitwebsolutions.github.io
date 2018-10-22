@@ -36,7 +36,7 @@ header{
 	background: rgba($white,0.75);
 
 	.logo{
-		margin-top: 20px;
+		margin-top: 35px;
 	}
 
 	.top-menu,
@@ -152,4 +152,37 @@ section{
 	background-color: $blue;
 	color: $white;
 	font-size: 18px;
+
+	&:hover{
+		color: $white;;
+	}
+}
+
+form{
+	.input-group{
+		width: 100;
+		margin-bottom: 10px;
+		label,
+		input[type='text']{
+			display: block;
+		}
+	}
+}
+
+.slide-box{
+	position: relative;
+	padding: 0 55px;
+	.left-nav,
+    .right-nav{
+        position: absolute;
+        top: 42%;
+    }
+
+    .left-nav{
+        left:0;
+    }
+
+    .right-nav{
+        right:0;
+    }
 }
