@@ -30,3 +30,25 @@ function changeOption(optionClass,data){
 		}
 	};
 }
+
+function carSlide(carImg,carThumb){
+	var CarsList = cars;
+	var CarImg = carImg;
+	var CarThumb = carThumb;
+
+	for(var i=0;i<CarsList.length;i++){
+		if (CarsList[i].maker==$('#maker').val()) {
+			CarImg.slick('slickAdd',"<div><img data-lazy='assets/img/cars/"+CarsList[i].maker+"/"+CarsList[i].model+".png' data-maker='"+CarsList[i].maker+"' data-model='"+CarsList[i].model+"'/></div>");
+			CarThumb.slick('slickAdd',"<div><img data-lazy='assets/img/cars/"+CarsList[i].maker+"/"+CarsList[i].model+".png' data-maker='"+CarsList[i].maker+"' data-model='"+CarsList[i].model+"'/></div>");
+
+		}
+	}
+}
+
+function carData(maker,model){
+	var CarsList = cars;
+	for(var i=0;i<CarsList.length;i++){
+		maker.append("<option value='"+CarsList[i].maker+"' data-index='"+i+"'>"+CarsList[i].maker+"</option>");
+	}
+	model.append("<option value='"+CarsList[0].model+"'>"+CarsList[0].model+"</option>");
+}

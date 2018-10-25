@@ -256,7 +256,9 @@ ul.size-select{
                     text-align: center;
                     outline: none;
                     img{
-                        display: inline-block;
+                        // display: inline-block;
+                        width:100%;
+                        height: auto;
                     }
                 } 
             }
@@ -308,6 +310,7 @@ ul.size-select{
         select{
             padding: 5px 15px;
             width: 100%;
+            text-transform: capitalize;
         }
     }
 }
@@ -326,4 +329,11 @@ ul.size-select{
 
 .news-body{
     margin-top: 40px;
+}
+
+.result-item{
+    .tire-img{
+        width: 200px;
+        height: 135px;
+    }
 }

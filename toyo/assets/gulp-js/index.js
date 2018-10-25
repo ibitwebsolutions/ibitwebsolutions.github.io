@@ -39,6 +39,7 @@ $(".size-options").on("click", "a.tire-ratio", function(){
 
 $(".size-options").on("click", "a.tire-rim", function(){
     sizeSet.push({"rim":$(this).html()});
+    console.log(sizeSet);
 });
 
 $('#skip').click(function(){
@@ -49,10 +50,10 @@ $('#skip').click(function(){
 });
 
 $(document).ready(function(){
+
   	$('.car-select').slick({
 	  slidesToShow: 1,
 	  slidesToScroll: 1,
-  	  lazyLoad: 'ondemand',
 	  prevArrow: $(".left-nav"),
       nextArrow: $(".right-nav"),
 	  fade: true,
@@ -70,6 +71,31 @@ $(document).ready(function(){
 	  focusOnSelect: true
 	});
 
+	
+
+	$('#maker').change(function(e){
+		var CarsList = cars;
+		var index = $(this).find(':selected').data('index');
+		$(this).val='';
+		$("#model").children('option').remove();
+		$('#model').append("<option value='"+CarsList[index].model+"'>"+CarsList[index].model+"</option>");
+	
+		var slideno = index + 1;
+		$('.car-thumb').slick('slickGoTo', slideno - 1);
+	});
+
+	$('#model').change(function(e){
+		var CarsList = cars;
+		var index = $(this).find(':selected').data('index');
+		$(this).val='';
+		$("#model").children('option').remove();
+		$('#model').append("<option value='"+CarsList[index].model+"'>"+CarsList[index].model+"</option>");
+	
+		var slideno = index + 1;
+		$('.car-thumb').slick('slickGoTo', slideno - 1);
+	});
+
+
 	$('.news-slider').slick({
 		slidesToShow: 3,
 		slidesToScroll: 1,
@@ -82,4 +108,27 @@ $(document).ready(function(){
 		focusOnSelect: true,
 		adaptiveHeight: true
 	});
-});
+
+	// $.ajax({
+	// 	type: "POST",
+ //        contentType: "application/json",
+ //        dataType: "json",
+	// 	url: "/data.json",
+	// 	success: function(data){
+	//         var groupedData = _.groupBy(data, function(d){return d.maker});
+	// 		console.log(groupedData);
+	//     }
+	// });
+
+	// $.getJSON( "assets/gulp-js/data.json", function( data ) {
+	//   	var groupedData = _.groupBy(data, function(d){return d.maker});
+	// 	console.log(groupedData);
+	// });
+
+	console.log("dad");
+	var groupedData = _.groupBy(cars, function(d){return d.maker});
+		console.log(groupedData);
+
+	carData($('#maker'),$('#model'));//First load
+	carSlide($('.car-select'),$('.car-thumb'));//Second load
+}); 
