@@ -109,6 +109,19 @@ $(document).ready(function(){
 		adaptiveHeight: true
 	});
 
+	$('.result-slide').slick({
+		slidesToShow: 4,
+		slidesToScroll: 1,
+		lazyLoad: 'ondemand',
+		prevArrow: $(".prev"),
+		nextArrow: $(".next"),
+		fade: false,
+		dots: false,
+		centerMode: false,
+		focusOnSelect: true,
+		adaptiveHeight: true
+	});
+
 	// $.ajax({
 	// 	type: "POST",
  //        contentType: "application/json",

@@ -331,9 +331,61 @@ ul.size-select{
     margin-top: 40px;
 }
 
-.result-item{
-    .tire-img{
-        width: 200px;
-        height: 135px;
+.result-title{
+    p{
+        margin: 0!important;
+        font-weight: bold;
+        font-size: 22px!important;
+    }
+
+    span{
+        color: $blue;
+    }
+}
+
+.result-slide{
+    position: relative;
+    .result-item{
+        display: inline-block;
+        overflow: hidden;
+        position: relative;
+        height: 300px;
+        .tire-img{
+            display: inline-block;
+            width: 180px;
+            height: 130px;
+            margin: 0;
+            background-size: 180px 260px;
+        }
+
+        .tire-logo{
+            width: 180px!important;
+            height: auto!important;
+        }
+
+        .tire-logo,
+        p{
+            display: inline-block!important;
+            margin: 0!important;
+            width: 180px;
+
+        }
+
+        p{
+            font-size: 18px;
+            line-height:1;
+            margin-top: 10px!important;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            height: 85px;
+        }
+
+        a{
+            position: relative;
+            display: inline-block;
+            width: 180px;
+            bottom: 10px;
+        }
     }
 }
