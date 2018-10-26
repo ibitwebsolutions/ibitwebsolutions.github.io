@@ -56,3 +56,29 @@ var data = [
 		}
 	}
 ];
+
+var cars = 
+{
+	"data":	{
+			"maker_id":"1",
+			"maker":"isuzu",
+			"models":
+				{
+					"model":{
+						"model_id":"1",
+						"name":"mu-x"
+					}
+				}
+	},
+	"data":	{
+			"maker_id":"1",
+			"maker":"mazds",
+			"models":
+				{
+					"model":{
+						"model_id":"2",
+						"name":"mirage"
+					}
+				}
+	}
+};

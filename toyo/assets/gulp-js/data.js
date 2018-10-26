@@ -33,56 +33,48 @@ var Trim = [
 
 var cars = [
 	{
+		"maker_id":"1",
 		"maker":"isuzu",
-		"model":"mu-x",
-		"patterns":[{
-			"set":[{
-				"tire-size":"265/65 R 17",
-				"codes":[
-					  "A10440041",
-					  "A12859",
-					  "M18850362"
-				]
-			}]
-		}]
+		"models":[
+			{
+				"model":[{
+					"model_id":"1",
+					"name":"mu-x"
+				}]
+			}
+		]
 	},
 	{
+
+		"maker_id":"2",
 		"maker":"mitsubishi",
-		"model":"montero-sport",
-		"patterns":[{
-			"set":[{
-				"tireSize":"265/60 R 18",
-				"codes":[
-					  "M22083",
-					  "M19950344",
-					  "A14615"
-				]
-			}]
-		}]
+		"models":[
+			{
+				"model":[{
+					"model_id":"2",
+					"name":"montero-sport"
+				}]
+			}
+		]
 	},
 	{
+
+		"maker_id":"2",
 		"maker":"toyota",
-		"model":"avanza",
-		"patterns":{
-			"set":{
-				"tireSize":"185/65 R 15",
-				"codes":["M13122210"]
+		"models":[
+			{
+				"model":[{
+					"model_id":"3",
+					"name":"avanza"
+				}],
+			},
+			{
+				"model":[{
+					"id":"4",
+					"name":"fortuner"
+				}]
 			}
-		}
-	},
-	{
-		"maker":"toyota",
-		"model":"fortuner",
-		"patterns":{
-			"set":{
-				"tireSize":"265/60 R 18",
-				"codes":[
-					  "M22083",
-					  "M19950344",
-					  "A14615"
-				]
-			}
-		}
+		]
 	}
 ];
 

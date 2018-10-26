@@ -78,19 +78,21 @@ $(document).ready(function(){
 		var index = $(this).find(':selected').data('index');
 		$(this).val='';
 		$("#model").children('option').remove();
-		$('#model').append("<option value='"+CarsList[index].model+"'>"+CarsList[index].model+"</option>");
-	
-		var slideno = index + 1;
-		$('.car-thumb').slick('slickGoTo', slideno - 1);
+
+		for(var x=0;x<CarsList[index].models.length;x++){
+			$('#model').append("<option value='"+CarsList[index].models[x].model[0].name+"' data-index='"+x+"'>"+CarsList[index].models[x].model[0].name+"</option>");
+		}
+
+		$('.car-thumb').slick('slickRemove');
+
+		carSlide($('.car-select'),$('.car-thumb'),index);
+
 	});
 
 	$('#model').change(function(e){
 		var CarsList = cars;
 		var index = $(this).find(':selected').data('index');
-		$(this).val='';
-		$("#model").children('option').remove();
-		$('#model').append("<option value='"+CarsList[index].model+"'>"+CarsList[index].model+"</option>");
-	
+
 		var slideno = index + 1;
 		$('.car-thumb').slick('slickGoTo', slideno - 1);
 	});
@@ -122,26 +124,6 @@ $(document).ready(function(){
 		adaptiveHeight: true
 	});
 
-	// $.ajax({
-	// 	type: "POST",
- //        contentType: "application/json",
- //        dataType: "json",
-	// 	url: "/data.json",
-	// 	success: function(data){
-	//         var groupedData = _.groupBy(data, function(d){return d.maker});
-	// 		console.log(groupedData);
-	//     }
-	// });
-
-	// $.getJSON( "assets/gulp-js/data.json", function( data ) {
-	//   	var groupedData = _.groupBy(data, function(d){return d.maker});
-	// 	console.log(groupedData);
-	// });
-
-	console.log("dad");
-	var groupedData = _.groupBy(cars, function(d){return d.maker});
-		console.log(groupedData);
-
 	carData($('#maker'),$('#model'));//First load
-	carSlide($('.car-select'),$('.car-thumb'));//Second load
+	carSlide($('.car-select'),$('.car-thumb'),0);//Second load
 }); 

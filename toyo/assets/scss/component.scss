@@ -349,18 +349,20 @@ ul.size-select{
         display: inline-block;
         overflow: hidden;
         position: relative;
-        height: 300px;
+        margin-top: 10px;
+        height: 320px;
         .tire-img{
             display: inline-block;
             width: 180px;
             height: 130px;
             margin: 0;
             background-size: 180px 260px;
+            background-position: top center;
         }
 
         .tire-logo{
-            width: 180px!important;
-            height: auto!important;
+                width: 180px;
+                height: 33px;
         }
 
         .tire-logo,
@@ -371,14 +373,18 @@ ul.size-select{
 
         }
 
+
         p{
-            font-size: 18px;
-            line-height:1;
             margin-top: 10px!important;
-            text-overflow: ellipsis;
-            white-space: nowrap;
+            margin-bottom: 10px!important;
+            height: 80px!important;
+            display: -webkit-box;
+            margin: 0 auto;
+            line-height: 120%;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
             overflow: hidden;
-            height: 85px;
+            text-overflow: ellipsis;
         }
 
         a{

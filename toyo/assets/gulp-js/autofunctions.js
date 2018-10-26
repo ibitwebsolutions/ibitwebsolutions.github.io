@@ -31,24 +31,41 @@ function changeOption(optionClass,data){
 	};
 }
 
-function carSlide(carImg,carThumb){
+function carSlide(carImg,carThumb,makerIndex){
 	var CarsList = cars;
 	var CarImg = carImg;
 	var CarThumb = carThumb;
+	var index;
+	var count = CarThumb.find('.slick-slide').length;
 
-	for(var i=0;i<CarsList.length;i++){
-		if (CarsList[i].maker==$('#maker').val()) {
-			CarImg.slick('slickAdd',"<div><img data-lazy='assets/img/cars/"+CarsList[i].maker+"/"+CarsList[i].model+".png' data-maker='"+CarsList[i].maker+"' data-model='"+CarsList[i].model+"'/></div>");
-			CarThumb.slick('slickAdd',"<div><img data-lazy='assets/img/cars/"+CarsList[i].maker+"/"+CarsList[i].model+".png' data-maker='"+CarsList[i].maker+"' data-model='"+CarsList[i].model+"'/></div>");
+	if ($('#model')[0].selectedIndex <= 0) {
+        index = makerIndex;
+    }else{
+    	index = $('#model').find(':selected').data('index');
+    }
 
-		}
+    if (count>0) {
+    	for(g=count;g>0;g--){
+    		CarImg.slick('slickRemove',g - 1);
+    		CarThumb.slick('slickRemove',g - 1);
+    	}
+    }
+	
+	for(var x=0;x<CarsList[index].models.length;x++){
+		CarImg.slick('slickAdd',"<div><img data-lazy='assets/img/cars/"+CarsList[index].maker+"/"+CarsList[index].models[x].model[0].name+".png' data-maker='"+CarsList[index].maker+"' data-model='"+CarsList[index].models[x].model[0].name+"'/></div>");
+		CarThumb.slick('slickAdd',"<div><img data-lazy='assets/img/cars/"+CarsList[index].maker+"/"+CarsList[index].models[x].model[0].name+".png' data-maker='"+CarsList[index].maker+"' data-model='"+CarsList[index].models[x].model[0].name+"'/></div>");
 	}
+    
+
 }
 
 function carData(maker,model){
 	var CarsList = cars;
 	for(var i=0;i<CarsList.length;i++){
-		maker.append("<option value='"+CarsList[i].maker+"' data-index='"+i+"'>"+CarsList[i].maker+"</option>");
+		maker.append("<option value='"+CarsList[i].maker+" 'data-index='"+i+"'>"+CarsList[i].maker+"</option>");
 	}
-	model.append("<option value='"+CarsList[0].model+"'>"+CarsList[0].model+"</option>");
+
+	for(var x=0;x<CarsList[0].models.length;x++){
+		model.append("<option value='"+CarsList[0].models[x].model[0].name+"' data-index='"+x+"'>"+CarsList[0].models[x].model[0].name+"</option>");
+	}
 }
