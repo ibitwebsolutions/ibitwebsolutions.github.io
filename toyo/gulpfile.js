@@ -59,7 +59,7 @@ gulp.task('js', () => {
 				this.emit('end');
 			}
 		}))
-	.pipe(uglify())
+	// .pipe(uglify())
 	.pipe(gulp.dest('assets/js/'))
 	.pipe(browserSync.stream());
 });
@@ -68,7 +68,7 @@ gulp.task('babel', () => {
   return gulp.src("assets/babel/*.js")
     .pipe(babel())
     .pipe(concat("babel.js"))
-    .pipe(gulp.dest('assets/gulp-js/'))
+    // .pipe(gulp.dest('assets/gulp-js/'))
     .pipe(browserSync.stream());
 });
 
